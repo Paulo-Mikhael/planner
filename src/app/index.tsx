@@ -137,13 +137,12 @@ export default function Index() {
       }
 
       const trip = tripServer.getById(tripID);
-      console.log(trip);
 
       if (trip){
         return router.navigate("/trip/" + trip.id);
-      }else{
+      } else {
         AsyncStorage.clear();
-        return setIsCreatingTrip(false);
+        return setIsGettingTrip(false);
       }
     } catch (error) {
       setIsGettingTrip(false);

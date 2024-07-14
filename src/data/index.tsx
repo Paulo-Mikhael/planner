@@ -1,3 +1,3 @@
-import { Trip } from "@/types";
+import { TripProps } from "@/types";
 
-export const trips: Trip[] = []
+export const trips: TripProps[] = []

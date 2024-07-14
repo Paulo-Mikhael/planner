@@ -3,7 +3,8 @@ import { TripDetails, TripProps } from "@/types";
 import 'react-native-get-random-values';
 import { v4 as uuidV4 } from "uuid";
 
-type CreateTrip = Omit<TripProps, "id" | "owner_name" | "owner_email">
+type CreateTrip = Omit<TripDetails, "id">
+type UpdateTrip = Omit<TripDetails, "emails_to_invite">
 
 function getById(id: string){
   try {
@@ -14,7 +15,7 @@ function getById(id: string){
     const trip = tripsList.find(trip => trip.id === id);
 
     if (!trip){
-      return undefined;
+      return null;
     }
 
     const tripDetails: TripDetails = {
