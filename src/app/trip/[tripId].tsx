@@ -42,7 +42,7 @@ export default function Trip() {
   const [isUpdatingTrip, setIsUpdatingTrip] = useState(false);
   const [tripDetails, setTripDetails] = useState({} as TripData);
   const [option, setOption] = useState<"activity" | "details">("activity");
-  const [showModal, setShowModal] = useState(MODAL.UPDATE_TRIP);
+  const [showModal, setShowModal] = useState(MODAL.NONE);
   const [destination, setDestination] = useState("");
   const [selectedDates, setSelectedDates] = useState({} as DatesSelected);
 
@@ -65,14 +65,14 @@ export default function Trip() {
 
       const start_at = dayjs(trip.starts_at).format("DD");
       const ends_at = dayjs(trip.ends_at).format("DD");
-      const month = dayjs(trip.starts_at).format("MMMM");
+      const month = dayjs(trip.starts_at).format("MMM");
 
       setDestination(trip.destination);
 
       setTripDetails(
         {
           ...trip,
-          when: `${destination}, de ${start_at} a ${ends_at} de ${month}`
+          when: `${destination}, de ${start_at} a ${ends_at} de ${month}.`
         }
       );
     } catch (error) {

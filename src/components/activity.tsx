@@ -7,7 +7,7 @@ import clsx from "clsx"
 export type ActivityProps = {
   id: string
   title: string
-  hour: string
+  occurs_at: string
   isBefore: boolean
 }
 
@@ -19,7 +19,7 @@ export function Activity({ data }: Props) {
   return (
     <View
       className={clsx(
-        "w-full bg-zinc-900 px-4 py-3 rounded-lg flex-row items-center border border-zinc-800 gap-3",
+        "w-full bg-zinc-900 px-4 py-3 rounded-lg flex-row items-center border border-zinc-800 gap-3 mb-5",
         { "opacity-50": data.isBefore }
       )}
     >
@@ -33,7 +33,7 @@ export function Activity({ data }: Props) {
         {data.title}
       </Text>
 
-      <Text className="text-zinc-400 font-regular text-sm">{data.hour}</Text>
+      <Text className="text-zinc-400 font-regular text-sm">{data.occurs_at}</Text>
     </View>
   )
 }

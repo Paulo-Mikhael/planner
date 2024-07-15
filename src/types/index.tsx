@@ -9,3 +9,9 @@ export type TripProps = {
 }
 
 export type TripDetails = Omit<TripProps, "owner_name" | "owner_email">
+
+export type ActivityProps = {
+  id: string,
+  occurs_at: string,
+  title: string,
+}

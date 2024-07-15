@@ -4,7 +4,6 @@ import 'react-native-get-random-values';
 import { v4 as uuidV4 } from "uuid";
 
 type CreateTrip = Omit<TripDetails, "id">
-type UpdateTrip = Omit<TripDetails, "emails_to_invite">
 
 function getById(id: string){
   try {
